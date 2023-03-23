@@ -95,7 +95,7 @@ function App() {
               className="outline-none cursor-pointer border-2 rounded-lg p-2"
               type="range"
               min="0.5"
-              max="50"
+              max="100"
               step="0.5"
               placeholder="Error rate from 1 to 1000"
               maxLength={4}
