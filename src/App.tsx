@@ -10,7 +10,7 @@ function App() {
   const [userNums, setuserNums] = useState(10);
 
   const [data, setData] = useState<any[]>([]);
-  console.log(page)
+  console.log(page);
   const scrollHandler = (e: any) => {
     if (
       e.target.scrollHeight - (e.target.scrollTop + window.innerHeight) <=
@@ -31,7 +31,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .post('http://localhost:5000/users/get', {
+      .post('https://generate-random-data-back.vercel.app/users/get', {
         errorRate: errors,
         seed: seed,
         region: country,
@@ -39,7 +39,7 @@ function App() {
         userNums: userNums,
       })
       .then((response) => setData(response.data.users));
-  }, [seed, errors, country,page,userNums]);
+  }, [seed, errors, country, page, userNums]);
 
   return (
     <div className="App">
@@ -94,7 +94,8 @@ function App() {
               }}
               className="outline-none cursor-pointer border-2 rounded-lg p-2"
               type="range"
-              min="0.5" max="50"
+              min="0.5"
+              max="50"
               step="0.5"
               placeholder="Error rate from 1 to 1000"
               maxLength={4}
