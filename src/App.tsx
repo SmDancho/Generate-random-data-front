@@ -98,7 +98,7 @@ function App() {
               }}
               className="outline-none cursor-pointer border-2 rounded-lg p-2"
               type="range"
-              min="0.5"
+              min="0"
               max="50"
               step="0.5"
               placeholder="Error rate from 1 to 1000"
@@ -124,11 +124,11 @@ function App() {
 
       <div className="w-[1280px] m-auto h-[400px] overflow-auto scrollBlock">
         <div className="flex justify-around font-bold  ">
-          <div className="w-full">id</div>
-          <div className="w-full">Name</div>
-          <div className="w-full">lastName</div>
-          <div className="w-full">address</div>
-          <div className="w-full">number</div>
+          <div className="w-[35px]">id</div>
+          <div className="w-[256px]">Name</div>
+          <div className="w-[256px]">lastName</div>
+          <div className="w-[256px]">address</div>
+          <div className="w-[256px]">number</div>
         </div>
         {data.map((users, index) => (
           <Users {...users} index={index} />
