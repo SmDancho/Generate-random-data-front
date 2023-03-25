@@ -24,12 +24,22 @@ export const Users: FC<users> = ({
   const randomAdress = address.street || address.city || address.state;
 
   return (
-    <div className="flex justify-around text-center border-4 rounded-lg mt-2">
-      <div className="w-full">{index}</div>
-      <div className="w-full">{firstName}</div>
-      <div className="w-full">{lastName}</div>
-      <div className="w-full">{randomAdress}</div>
-      <div className="w-full">{phone}</div>
-    </div>
+    <table  className="flex justify-around rounded-lg mt-2 border-collapse ">
+      <td className="w-full border-4 border-collapse">
+        <tr>{index}</tr>
+      </td>
+      <td className="w-full border-4 ">
+        <tr>{firstName}</tr>
+      </td>
+      <td className="w-full border-4">
+        <tr>{lastName}</tr>
+      </td>
+      <td className="w-full border-4">
+        <tr>{randomAdress}</tr>
+      </td>
+      <td className="w-full border-4">
+        <tr>{phone}</tr>
+      </td>
+    </table>
   );
 };

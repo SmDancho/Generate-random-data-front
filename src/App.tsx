@@ -1,4 +1,4 @@
-import { useState, useEffect, } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Users } from '../src/components/users';
 
@@ -46,6 +46,7 @@ function App() {
       <div className="w-[1280px] m-auto">
         <div className="w-full flex justify-between items-center h-[150px]">
           <div>
+            <div>Region</div>
             <select
               className="outline-none cursor-pointer border-2 rounded-lg p-2"
               name="countrySelect"
@@ -61,6 +62,21 @@ function App() {
           </div>
           <div>
             <div className="flex flex-col items-start">
+              <div>seed</div>
+              <input
+                className="outline-none cursor-pointer border-2 rounded-lg p-2"
+                type="number"
+                placeholder="seed"
+                value={seed}
+                onChange={(e) => setSeed(Number(e.target.value))}
+              />
+              <button
+                onClick={() => {
+                  setSeed(0);
+                }}
+              >
+                set 0
+              </button>
               <button
                 onClick={() => {
                   const seed = [...new Array(10)].map((i) =>
@@ -72,22 +88,10 @@ function App() {
               >
                 Generate
               </button>
-              <input
-                className="outline-none cursor-pointer border-2 rounded-lg p-2"
-                type="text"
-                placeholder="seed"
-                value={seed}
-              />
-              <button
-                onClick={() => {
-                  setSeed(0);
-                }}
-              >
-                set 0
-              </button>
             </div>
           </div>
-          <div>
+          <div className="flex flex-col">
+            <div>Errors</div>
             <input
               onChange={(e) => {
                 serErrors(e.target.value);
@@ -101,12 +105,25 @@ function App() {
               maxLength={4}
               value={errors}
             />
+            <input
+              onChange={(e) => {
+                serErrors(e.target.value);
+              }}
+              className="outline-none cursor-pointer border-2 rounded-lg p-2"
+              type="text"
+              min="0.5"
+              max="50"
+              step="0.5"
+              placeholder="Error rate from 1 to 1000"
+              maxLength={4}
+              value={errors}
+            />
           </div>
         </div>
       </div>
 
       <div className="w-[1280px] m-auto h-[400px] overflow-auto scrollBlock">
-        <div className="flex justify-around font-bold text-center  border-4 rounded-lg ">
+        <div className="flex justify-around font-bold  ">
           <div className="w-full">id</div>
           <div className="w-full">Name</div>
           <div className="w-full">lastName</div>
