@@ -122,17 +122,21 @@ function App() {
         </div>
       </div>
 
-      <div className="w-[1280px] m-auto h-[400px] overflow-auto scrollBlock">
-        <div className="flex justify-around font-bold  ">
-          <div className="w-[35px]">id</div>
-          <div className="w-[256px]">Name</div>
-          <div className="w-[256px]">lastName</div>
-          <div className="w-[256px]">address</div>
-          <div className="w-[256px]">number</div>
-        </div>
-        {data.map((users, index) => (
-          <Users {...users} index={index} />
-        ))}
+      <div className=" w-[1280px] m-auto h-[300px] overflow-auto scrollBlock">
+        <table className="flex flex-col ">
+          <thead className="flex font-bold text-left  justify-around ">
+            <th className=" w-full border-4">id</th>
+            <th className="w-full border-4">Name</th>
+            <th className="w-full border-4">lastName</th>
+            <th className="w-full border-4">address</th>
+            <th className="w-full border-4">number</th>
+          </thead>
+          <tbody className="flex flex-col ">
+            {data.map((users, index) => (
+              <Users {...users} index={index} />
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
