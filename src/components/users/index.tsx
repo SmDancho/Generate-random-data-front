@@ -26,13 +26,12 @@ export const Users: FC<users> = ({
   return (
     <>
       <tr className="flex justify-around ">
-        <td className="w-full border-4">{index}</td>
-        <td className="w-full border-4">{firstName}</td>
-        <td className="w-full border-4">{lastName}</td>
-        <td className="w-full border-4">{randomAdress}</td>
-        <td className="w-full border-4  ">{phone}</td>
+        <td className="w-full border-4 overflow-hidden">{index}</td>
+        <td className="w-full border-4 overflow-hidden">{firstName}</td>
+        <td className="w-full border-4 overflow-hidden">{lastName}</td>
+        <td className="w-full border-4 overflow-hidden">{randomAdress}</td>
+        <td className="w-full border-4 overflow-hidden">{phone}</td>
       </tr>
     </>
   );
 };
-  
